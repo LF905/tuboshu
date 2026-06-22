@@ -62,22 +62,17 @@ const changeSwitch = (val)=>{
 }
 
 const handleClickGetIcon = ()=>{
-  if(icon.value.endsWith('ZP8EQEcFCACPFvgAAAAASUVORK5CYII=')){
-    window.myApi.getFavicon(props.element.name).then((res)=>{
-        if(res.ret === 0){
-          icon.value = res.data;
-          message.success('获取成功')
-          stopAnimation()
-        }else{
-          message.error(res.data)
-          stopAnimation()
-        }
+  window.myApi.getFavicon(props.element.name).then((res)=>{
+      if(res.ret === 0){
+        icon.value = res.data;
+        message.success('获取成功')
+        stopAnimation()
+      }else{
+        message.error(res.data)
+        stopAnimation()
       }
-    )
-  }else{
-    message.info('已存在图标,无需获取')
-    stopAnimation()
-  }
+    }
+  )
 }
 
 const stopAnimation = ()=>{
