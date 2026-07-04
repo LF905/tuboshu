@@ -83,7 +83,7 @@ class ViewManager {
         }
     }
 
-    createView(url, name, source) {
+    async createView(url, name, source) {
         const {identity, headers} = browserEnv.getAll();
         const partitionName = 'persist:' + name;
         const mySession = session.fromPartition(partitionName);
@@ -96,7 +96,6 @@ class ViewManager {
 
         const view = new WebContentsView({
             webPreferences: {
-                sandbox: true,
                 webSecurity: true,
                 nodeIntegration: false,
                 contextIsolation: true,
@@ -110,7 +109,7 @@ class ViewManager {
         if(isHttpAddr){
             Utility.alterRequestHeader(view, headers)
             Utility.alterResponseHeader(view)
-            Utility.loadExtensions(view).finally()
+            await Utility.loadExtensions(view)
         }
 
         view.webContents.setZoomLevel(0)
