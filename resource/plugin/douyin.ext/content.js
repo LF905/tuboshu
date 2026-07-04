@@ -7,6 +7,9 @@ document.createElement = function(tagName) {
                 if (value && value.startsWith('bitbrowser:')) {
                     throw new Error('Setting iframe src to bitbrowser protocol is not allowed');
                 }
+				if (value && value.startsWith('bytedance:')) {
+                    throw new Error('Setting iframe src to bytedance protocol is not allowed');
+                }
                 Object.defineProperty(this, 'src', {
                     value: value,
                     writable: true,
