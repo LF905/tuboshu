@@ -49,4 +49,4 @@
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=deepshit2025/tuboshu&type=Date)](https://www.star-history.com/#deepshit2025/tuboshu&Date)
+[![Star History Chart](https://star-history.dera.page/svg?repos=deepshit2025/tuboshu&type=Date)](https://star-history.dera.page/#deepshit2025/tuboshu&Date)
